@@ -9,7 +9,10 @@ changes=[]
 percentChanges=[]
  
 currenciesUrl = "https://in.finance.yahoo.com/currencies"
-data = requests.get(currenciesUrl)
+proxy = {
+    "https": "https://ftrancart:[Password]@proxyusers.intranatixis.com:8080"
+}
+data = requests.get(currenciesUrl, proxies = proxy)
 soup = BeautifulSoup(data.text)
  
 counter = 40
